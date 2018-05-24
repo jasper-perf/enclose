@@ -4,8 +4,10 @@
   "description": "Compile your Node.js project into an executable",
   "bin": "bin/enclose.js",
   "main": "bin/enclose.js",
-  "scripts" : {
-    "postinstall": "node postinstall.js"
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,8 @@
   },
   "homepage": "https://github.com/igorklopov/enclose",
   "dependencies": {
-    "async": "^1.5.2"
-  }
+    "async": "^1.5.2",
+    "snyk": "^1.80.1"
+  },
+  "snyk": true
 }
